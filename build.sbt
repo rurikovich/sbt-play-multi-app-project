@@ -13,4 +13,5 @@ lazy val a = project.in(file("a"))
 lazy val b = project.in(file("b"))
 
 lazy val c = project.in(file("c")).enablePlugins(PlayScala)
+lazy val d = project.in(file("d")).enablePlugins(PlayScala)
 
