@@ -7,4 +7,3 @@ libraryDependencies ++= Seq(
 )
 scalacOptions ++= Seq("-deprecation", "-feature")
 
-enablePlugins(JavaAppPackaging)
