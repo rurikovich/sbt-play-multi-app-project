@@ -2,8 +2,6 @@ name := "sbt-multiproject-rootbuild"
 version := "0.1.0-SNAPSHOT"
 scalaVersion := "2.12.4"
 
-lazy val a = project.in(file("a"))
-
 lazy val app1 = (project in file("app1"))
   .settings(
     name := "app1",
@@ -14,7 +12,7 @@ lazy val app1 = (project in file("app1"))
     libraryDependencies ++= Seq(jdbc, ehcache, ws, specs2 % Test, guice)
   )
   .enablePlugins(PlayScala)
-  .dependsOn(a)
+  .dependsOn(model)
 
 lazy val app2 = (project in file("app2"))
   .settings(
@@ -25,5 +23,7 @@ lazy val app2 = (project in file("app2"))
     resolvers += "Akka Snapshot Repository" at "http://repo.akka.io/snapshots/",
     libraryDependencies ++= Seq(jdbc, ehcache, ws, specs2 % Test, guice)
   )
-  .enablePlugins(PlayScala).dependsOn(a)
+  .enablePlugins(PlayScala)
+  .dependsOn(model)
 
+lazy val model = project.in(file("model"))
