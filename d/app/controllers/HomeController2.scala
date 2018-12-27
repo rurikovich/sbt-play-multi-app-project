@@ -17,7 +17,7 @@ class HomeController2 @Inject()(cc: ControllerComponents) extends AbstractContro
    * a path of `/`.
    */
   def index = Action {
-    Ok("app2")
+    Ok(a.MyModel("app1").toString)
   }
 
 }
