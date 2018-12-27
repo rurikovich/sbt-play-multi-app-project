@@ -16,9 +16,9 @@ lazy val app1 = (project in file("app1"))
   .enablePlugins(PlayScala)
   .dependsOn(a)
 
-lazy val multiapp2 = (project in file("d"))
+lazy val app2 = (project in file("app2"))
   .settings(
-    name := "multiApp2",
+    name := "app2",
     version := "1.0",
     scalaVersion := "2.12.2",
     resolvers += "scalaz-bintray" at "https://dl.bintray.com/scalaz/releases",
